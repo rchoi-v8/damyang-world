@@ -89,6 +89,25 @@
   .dialog-bar button{min-height:44px}
 }
 .mobile-pager{display:none}
+@media screen and (max-width:760px){
+  .egg-guide-button,.egg-title-button,.egg-star-button{appearance:none;border:0;background:transparent;color:inherit;padding:0;font:inherit;letter-spacing:inherit;touch-action:manipulation}
+  .mobile-reading .guide{aspect-ratio:8/9}
+  .egg-guide-button{display:block;width:100%;height:100%}
+  .egg-title-button{display:block;min-height:44px;text-align:left;font-weight:inherit;line-height:inherit}
+  footer>h2:has(.egg-star-button){position:relative;padding-right:44px}
+  .egg-star-button{position:absolute;right:0;top:0;display:grid;place-items:center;width:44px;height:44px;font-size:18px;color:#a3823d}
+  .mobile-reading .speech.egg-greeting{background:#fff5ce;white-space:pre-line;font-size:13px;line-height:1.7;box-shadow:3px 3px 0 #c7af70}
+  .speech.egg-greeting:after{background:#fff5ce}
+  .egg-sparkles{position:absolute;left:0;right:0;top:-25px;text-align:center;color:#9b6aa5;font-size:22px;pointer-events:none;animation:egg-sparkle 850ms ease-out both}
+  .egg-dialog{width:350px;max-width:calc(100vw - 40px);max-height:85dvh;padding:20px 24px 28px;background:#fffdf1;box-shadow:6px 6px 0 #193d34;overflow-y:auto;text-align:center}
+  .egg-close{display:block;margin:0 0 12px auto;min-height:44px;padding:6px 10px;border:1px solid var(--ink);background:var(--mint);font-size:14px}
+  .egg-dialog h2{font-size:15px;letter-spacing:.5px;color:var(--muted);line-height:1.6;margin:0 0 16px}
+  .egg-character{display:block;width:120px;height:135px;margin:8px auto 18px}
+  .egg-character[hidden]{display:none}
+  #egg-dialog-message{font-size:20px;font-weight:700;line-height:1.8;word-break:keep-all}
+}
+@keyframes egg-sparkle{from{opacity:0;transform:translateY(10px) scale(.7)}35%{opacity:1}to{opacity:0;transform:translateY(-18px) scale(1.15)}}
+@container mobile-main (max-height:340px){footer>h2:has(.egg-star-button){padding-right:84px}.egg-star-button{right:40px}}
 .guestbook{text-align:left;margin:26px 0;padding:24px;background:#fffef8;border:var(--border);box-shadow:3px 3px 0 #b7cabc}
 .guestbook-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .guestbook h3{font-size:20px;line-height:1.5}
