@@ -9,6 +9,10 @@
   const list = document.getElementById('comment-list');
   const refresh = document.getElementById('comments-refresh');
   const more = document.getElementById('comments-more');
+  const composer = document.getElementById('comment-compose');
+  const mobileComposer = window.matchMedia('(max-width:760px)');
+  composer.open = !mobileComposer.matches;
+  mobileComposer.addEventListener('change', () => { composer.open = !mobileComposer.matches; });
   if (!config?.url || !config?.key) {
     status.textContent = '댓글 연결을 준비 중이에요.';
     return;
@@ -103,6 +107,10 @@
     if (saved) {
       body.value = '';
       pending = null;
+      if (mobileComposer.matches) {
+        composer.open = false;
+        composer.querySelector('summary').focus({preventScroll:true});
+      }
       status.textContent = '댓글을 남겼어요. 다른 방문자도 볼 수 있어요.';
       await loadComments(false,true);
     }
@@ -112,6 +120,6 @@
   submit.disabled = false;
   loadComments();
   setInterval(() => {
-    if (!document.hidden && form.getClientRects().length && offset <= 20) loadComments(false,true);
+    if (!document.hidden && list.getClientRects().length && offset <= 20) loadComments(false,true);
   }, 30000);
 })();

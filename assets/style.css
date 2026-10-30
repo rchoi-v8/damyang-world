@@ -102,6 +102,8 @@
 .comment-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px}
 .comment-actions small{font-size:12px;color:var(--muted)}
 .comment-actions button{background:var(--ink);color:#fffef5;font-weight:700}
+.guestbook .comment-compose{margin:0;padding:0;border:0;background:transparent;color:inherit;font-size:inherit}
+.comment-compose>summary{display:none}
 #comment-status{font-size:14px;line-height:1.8;margin:18px 0;color:var(--muted)}
 #comment-list{list-style:none;padding:0;margin:0}
 #comment-list li{border-top:1px dashed #afc1b4;padding:18px 0}
@@ -184,13 +186,17 @@
 }
 /* The closing page stays in the viewport; only the shared comment feed scrolls. */
 @media screen and (max-width:760px){
-  .mobile-reading footer.current-page{position:relative;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding:12px 4px;overflow:hidden;text-align:left}
-  .mobile-reading footer.current-page>.eyebrow,.mobile-reading footer.current-page>p{display:none}
-  .mobile-reading footer.current-page>h2{font-size:21px;line-height:1.4;margin:0;letter-spacing:-.7px}
-  .mobile-reading footer.current-page .guestbook{min-height:0;display:grid;grid-template-rows:auto auto auto auto minmax(0,1fr);gap:6px;margin:0;padding:12px;box-shadow:none;overflow:hidden}
+  .mobile-reading footer.current-page{position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:14px;padding:18px 6px 12px;overflow:hidden;text-align:left}
+  .mobile-reading footer.current-page>.eyebrow,.mobile-reading footer.current-page>.footer-note{display:none}
+  .mobile-reading footer.current-page>h2{font-size:21px;line-height:1.5;margin:0;letter-spacing:-.3px}
+  .mobile-reading footer.current-page>h2+p{display:block;font-size:14px;line-height:1.85;margin:0;color:var(--muted);word-break:keep-all}
+  .mobile-reading footer.current-page>h2+p br{display:initial}
+  .mobile-reading footer.current-page .guestbook{min-height:0;display:grid;grid-template-rows:auto auto auto auto minmax(60px,1fr);gap:10px;margin:0;padding:16px 14px;box-shadow:none;overflow-y:auto;overscroll-behavior:contain}
   .mobile-reading .guestbook-heading{align-items:center;gap:8px}
   .mobile-reading .guestbook h3{font-size:18px}
   .mobile-reading .guestbook-note{font-size:12px;line-height:1.6;margin:0}
+  .mobile-reading .comment-compose>summary{display:list-item;min-height:44px;padding:10px 12px;border:1px solid var(--ink);background:var(--mint);font-size:14px;line-height:1.6}
+  .mobile-reading .comment-compose[open]>summary{margin-bottom:12px}
   .mobile-reading #comment-form{display:grid;grid-template-columns:52px minmax(0,1fr);gap:6px 8px;align-items:center}
   .mobile-reading .guestbook label{font-size:13px;margin:0}
   .mobile-reading .guestbook input{min-height:44px;padding:6px 8px;line-height:1.5}
@@ -208,15 +214,16 @@
   .mobile-reading footer.current-page>details[open]>summary{position:sticky;top:-8px;background:#fffef8;border-bottom:1px solid #afc1b4}
 }
 @container mobile-main (max-height:500px){
-  .mobile-reading footer.current-page{padding:8px 2px;gap:6px}
+  .mobile-reading footer.current-page{padding:12px 4px 8px;gap:10px}
   .mobile-reading footer.current-page>h2{font-size:18px}
-  .mobile-reading footer.current-page .guestbook{padding:8px;gap:4px}
+  .mobile-reading footer.current-page>h2+p{font-size:13px;line-height:1.8}
+  .mobile-reading footer.current-page .guestbook{padding:12px;gap:8px}
   .mobile-reading .guestbook textarea{height:48px}
   .mobile-reading .comment-actions small{display:none}
   .mobile-reading .guestbook h3{font-size:16px}
 }
 @container mobile-main (max-height:340px){
-  .mobile-reading footer.current-page{grid-template-rows:auto minmax(0,1fr)}
+  .mobile-reading footer.current-page{grid-template-rows:auto auto minmax(0,1fr)}
   .mobile-reading footer.current-page>details:not([open]){position:absolute;right:4px;top:0;border:0;background:transparent}
   .mobile-reading footer.current-page>details:not([open])>summary{font-size:0}
   .mobile-reading footer.current-page>details:not([open])>summary:after{content:'출처';font-size:12px}
