@@ -93,7 +93,7 @@
 @media screen and (max-width:760px){
   body.mobile-reading{height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
   .mobile-reading .top{flex-shrink:0;position:relative}
-  .mobile-reading main{flex:1;min-height:0;overflow:hidden}
+  .mobile-reading main{flex:1;min-height:0;overflow:hidden;container:mobile-main / size}
   .mobile-reading .layout{height:100%;margin:0;padding:0 12px}
   .mobile-reading main:has(>.hero-wrap.current-page)>.layout{display:none}
   .mobile-reading .content{height:100%}
@@ -101,7 +101,30 @@
   .mobile-reading .reading-page.current-page{display:block;height:100%;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;scroll-behavior:auto;padding-bottom:32px}
   .mobile-reading .place.current-page{margin:0;box-shadow:none;border-top:0;border-bottom:0}
   .mobile-reading .directory.current-page,.mobile-reading footer.current-page{padding-top:24px}
-  .mobile-reading .hero-wrap.current-page{padding-bottom:32px}
+  /* Fit the welcome screen to the space left by the header and page controls. */
+  .mobile-reading .hero-wrap.current-page{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;padding:16px 18px}
+  .mobile-reading .hero{width:100%;height:100%;min-height:0;grid-template-rows:auto minmax(0,1fr);gap:16px;align-items:stretch}
+  .mobile-reading .hero-copy{min-width:0}
+  .mobile-reading .hero .status{font-size:10px;padding:3px 8px}
+  .mobile-reading .hero h1{font-size:clamp(30px,8vw,38px);line-height:1.22;margin:12px 0;letter-spacing:-1px}
+  .mobile-reading .hero h1 b{font-size:28px;right:5%}
+  .mobile-reading .hero-copy>p{font-size:15px;line-height:1.7}
+  .mobile-reading .hero-copy>p br{display:none}
+  .mobile-reading .enter{min-height:44px;padding:8px 18px;margin:14px 0 0}
+  .mobile-reading .hero-chips{display:none}
+  .mobile-reading .world-window{display:flex;flex-direction:column;min-height:0;max-height:310px;transform:none;margin:0;box-shadow:3px 3px 0 #9db9a9}
+  .mobile-reading .world-window .window-bar{min-height:26px;padding:4px 10px;font-size:10px;flex-shrink:0}
+  .mobile-reading .world-scene{flex:1;min-height:0;height:auto}
+  .mobile-reading .world-window .window-footer{display:none}
+  .mobile-reading .guide{width:auto;height:70%;max-height:150px;bottom:10px;left:18%}
+  .mobile-reading .guide svg{height:100%;width:auto}
+  .mobile-reading .speech{top:10px;font-size:12px;padding:6px 10px;right:10px}
+  .mobile-reading .portal{height:60%;width:75px;bottom:20px}
+  .mobile-reading .scene-label{bottom:5px;font-size:9px}
+  .mobile-reading .trip-strip{margin:0;padding:8px 10px;font-size:12px;line-height:1.6}
+  .mobile-reading .trip-strip>span{display:none}
+  .mobile-reading .trip-strip p{line-height:1.6}
+  .mobile-reading .trip-strip a{margin:2px 0 0;padding:0;line-height:1.6}
   .mobile-reading .back-top{display:none}
   .mobile-reading .mobile-pager{display:flex;align-items:center;gap:8px;flex-shrink:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));border-top:var(--border);background:#fffef5}
   .mobile-pager button{min-height:44px;padding:6px 10px;flex-shrink:0;border:1px solid var(--ink);background:var(--mint);font-size:14px;font-weight:700}
@@ -109,5 +132,21 @@
   .mobile-pager select{min-width:0;flex:1;min-height:44px;padding:8px 4px;color:var(--ink);background:var(--paper);border:1px solid #afc1b4;border-radius:0;font:inherit;font-size:14px}
   .mobile-pager select:focus-visible{outline:3px solid #a44773;outline-offset:2px}
   .mobile-reading .history-details{touch-action:pan-x pan-y}
+}
+@container mobile-main (max-height:460px){
+  .mobile-reading .hero-wrap.current-page{padding:10px 16px;gap:8px}
+  .mobile-reading .hero{gap:10px}
+  .mobile-reading .hero .status{display:none}
+  .mobile-reading .hero h1{font-size:30px;margin:0 0 8px}
+  .mobile-reading .hero-copy>p{font-size:14px;line-height:1.6}
+  .mobile-reading .enter{margin-top:10px}
+  .mobile-reading .world-window .window-bar,.mobile-reading .scene-label{display:none}
+  .mobile-reading .speech{font-size:11px}
+}
+@container mobile-main (max-height:340px){
+  .mobile-reading .hero-wrap.current-page{grid-template-rows:1fr}
+  .mobile-reading .hero{display:flex;align-items:center}
+  .mobile-reading .hero .world-window,.mobile-reading .trip-strip,.mobile-reading .hero-copy>p{display:none}
+  .mobile-reading .hero h1{font-size:28px}
 }
 @media print{.history-timeline{display:block}.era-card{margin-bottom:12px;break-inside:avoid}.county-overview,.old-map-layout{grid-template-columns:1fr 1.4fr}.history-details{display:block}.county-stats b{font-size:18px}}
