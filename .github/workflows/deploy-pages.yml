@@ -1,0 +1,39 @@
+# Add to the GitHub repository as .github/workflows/deploy-pages.yml.
+# First select Settings > Pages > Build and deployment > Source > GitHub Actions.
+name: Deploy Damyang World
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: damyang-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v6
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Publish site
+        id: deployment
+        uses: actions/deploy-pages@v4
