@@ -104,7 +104,10 @@
   .egg-dialog h2{font-size:15px;letter-spacing:.5px;color:var(--muted);line-height:1.6;margin:0 0 16px}
   .egg-character{display:block;width:120px;height:135px;margin:8px auto 18px}
   .egg-character[hidden]{display:none}
-  #egg-dialog-message{font-size:20px;font-weight:700;line-height:1.8;word-break:keep-all}
+  #egg-dialog-message{font-size:20px;font-weight:700;line-height:1.8;word-break:keep-all;white-space:pre-line;text-align:center}
+  .mobile-reading .directory .section-title>span.egg-map-reveal{display:block;position:relative;margin-top:12px;padding:10px 16px;border:1px dashed var(--ink);border-left:5px solid var(--ink);background:var(--yellow);color:var(--ink);transform-origin:top center;box-shadow:2px 2px 0 #c7af70}
+  .egg-ticket-label{display:block;font-size:11px;line-height:1.5;letter-spacing:.4px;margin-bottom:3px}
+  .egg-map-reveal strong{display:block;font-size:15px;line-height:1.6;font-weight:750}
 }
 @keyframes egg-sparkle{from{opacity:0;transform:translateY(10px) scale(.7)}35%{opacity:1}to{opacity:0;transform:translateY(-18px) scale(1.15)}}
 @container mobile-main (max-height:340px){footer>h2:has(.egg-star-button){padding-right:84px}.egg-star-button{right:40px}}

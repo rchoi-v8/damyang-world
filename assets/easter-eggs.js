@@ -5,6 +5,8 @@
   const guide = document.querySelector('.guide');
   const speech = document.querySelector('.speech');
   const mapTitle = document.getElementById('directory-title');
+  const mapHint = document.querySelector('#places .section-title > span');
+  const originalMapHint = mapHint.textContent;
   const closingTitle = document.querySelector('footer > h2');
   const originalSpeech = [...speech.childNodes].map(node => node.cloneNode(true));
   const character = guide.querySelector('svg');
@@ -69,7 +71,7 @@
     lastGuideTap = now;
     if (guideTaps < 5) return;
     guideTaps = 0;
-    speech.textContent = '혜정아, 반가워.\n담양에 온 걸 환영해!';
+    speech.textContent = '혜정아, 반가워!';
     speech.classList.add('egg-greeting');
     if (reducedMotion.matches) return;
     speech.animate([
@@ -92,10 +94,22 @@
     lastMapTap = now;
     if (mapTaps < 3) return;
     mapTaps = 0;
-    showSecret('비밀 목적지', '오늘의 진짜 목적지: 함께 좋은 추억 만들기.', false, titleButton);
+    const label = document.createElement('span');
+    label.className = 'egg-ticket-label';
+    label.textContent = '⌖ 오늘의 진짜 목적지:';
+    const destination = document.createElement('strong');
+    destination.textContent = '함께 좋은 추억 만들기.';
+    mapHint.replaceChildren(label, destination);
+    mapHint.classList.add('egg-map-reveal');
+    if (!reducedMotion.matches) {
+      mapHint.animate([
+        {opacity:0,transform:'perspective(500px) rotateX(-65deg) translateY(-6px)'},
+        {opacity:1,transform:'perspective(500px) rotateX(0) translateY(0)'}
+      ], {duration:550,easing:'ease-out'});
+    }
   });
   starButton.addEventListener('click', () => {
-    showSecret('대롱이의 비밀 초대', '히든 장소 발견! 여기는 우리만 아는 담양.', true, starButton);
+    showSecret('대롱이의 비밀 초대', '히든 장소 발견!\n여기는 우리만 아는 담양.', true, starButton);
   });
   function syncMobileEggs() {
     guideTaps = mapTaps = 0;
@@ -106,6 +120,7 @@
       mapTitle.append(titleButton);
       closingTitle.append(starButton);
       speech.setAttribute('aria-live','polite');
+      mapHint.setAttribute('aria-live','polite');
       document.body.append(modal);
     } else {
       if (modal.open) modal.close();
@@ -116,6 +131,9 @@
       speech.classList.remove('egg-greeting');
       speech.removeAttribute('aria-live');
       speech.replaceChildren(...originalSpeech.map(node => node.cloneNode(true)));
+      mapHint.classList.remove('egg-map-reveal');
+      mapHint.removeAttribute('aria-live');
+      mapHint.textContent = originalMapHint;
     }
   }
   mobile.addEventListener('change', syncMobileEggs);
