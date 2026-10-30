@@ -8,4 +8,106 @@
 .county-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:var(--border);background:var(--soft);margin-top:22px}.county-stats>div{padding:17px 12px;border-right:1px solid #b4c9ba}.county-stats>div:last-child{border-right:0}.county-stats small{display:block;font-size:10px;color:var(--muted);line-height:1.7;min-height:18px}.county-stats b{display:block;font-size:21px;line-height:1.6;margin-top:8px;letter-spacing:-.5px}.county-stats b span{font-size:11px}.county-overview{display:grid;grid-template-columns:.8fr 1.3fr;gap:28px;align-items:start;margin:26px 0}.reference-map{min-width:0}.reference-map .photo-open{padding:12px;background:#f3f2e9}.reference-map .photo-open img{width:100%;height:auto;max-height:470px;object-fit:contain}.reference-map figcaption{font-size:10px;line-height:1.9;color:var(--muted);margin-top:9px}.county-geography article+article{margin-top:20px}.county-geography h3{font-size:16px;line-height:1.6;margin:7px 0}.county-geography p{font-size:12px;line-height:2;color:#4c655b}.county-connect{margin-top:22px}.region-guide .story-grid .field-card>p{margin-top:10px}.history-timeline{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;position:relative;padding-left:20px}.history-timeline:before{content:'';position:absolute;left:0;top:12px;bottom:12px;border-left:2px dashed #b6a8c7}.era-card{position:relative;border:1px solid #b9c9bb;padding:20px;background:#fcfbf5}.era-card:nth-child(2n){background:var(--soft)}.era-card:before{content:'';position:absolute;left:-26px;top:25px;width:10px;height:10px;background:var(--place);border:1px solid var(--ink)}.era-label{font:600 11px ui-monospace,monospace;background:var(--place);padding:4px 7px;display:inline-block;border:1px solid #b7aec5}.era-card h3{font-size:16px;letter-spacing:-.3px;line-height:1.6;margin:12px 0 10px}.era-card>p:not(.source){font-size:12px;line-height:2;color:#4c655b}.era-tip{margin-top:14px;padding-top:12px;border-top:1px dashed #bec8ba;font-size:11px;line-height:1.9;color:#566e61}.era-card .source{font-size:9px}.era-card:last-child{grid-column:1/-1}.old-map-layout{display:grid;grid-template-columns:.8fr 1.1fr;gap:26px;align-items:start;margin-top:30px}.old-map-layout h3{font-size:20px;letter-spacing:-.5px;line-height:1.6;margin:10px 0 15px}.old-map-layout>div>p{font-size:12px;line-height:2;color:#4c655b;margin-top:14px}.old-map-layout .connection{margin-top:20px}.old-map-layout .reference-map img{max-height:420px}.history-details{margin-top:25px;padding:18px;border:1px solid #b9c9bb;background:#fcfbf5;font-size:12px;line-height:2}.history-details>p{margin-top:15px;color:var(--muted)}.history-details table{width:100%;border-collapse:collapse;margin-top:15px;font-size:11px;line-height:1.8}.history-details caption{text-align:left;font-size:10px;padding-bottom:8px;color:var(--muted)}.history-details th,.history-details td{text-align:left;border:1px solid #b9c9bb;padding:8px}.history-details thead{background:var(--place)}.history-details tbody th{font-weight:500}.history-gloss{margin-top:25px}
 @media(max-width:1100px){.county-stats{grid-template-columns:1fr 1fr}.county-stats>div:nth-child(2){border-right:0}.county-stats>div:nth-child(-n+2){border-bottom:1px solid #b4c9ba}.county-overview{gap:20px;grid-template-columns:.8fr 1fr}.history-timeline{grid-template-columns:1fr;padding-left:20px}.era-card:last-child{grid-column:auto}.old-map-layout{gap:20px}}
 @media(max-width:760px){.county-stats>div{padding:13px 10px}.county-stats small{font-size:9px}.county-stats b{font-size:20px;margin-top:5px}.county-overview{grid-template-columns:1fr;gap:22px;margin:22px 0}.county-overview .reference-map{max-width:275px;margin:0 auto;width:100%}.reference-map .photo-open{padding:9px}.reference-map .photo-open img{max-height:360px}.reference-map figcaption{font-size:9px}.county-geography h3{font-size:17px}.county-geography p{font-size:12px}.county-geography article+article{margin-top:22px}.history-timeline{padding-left:15px;gap:16px}.era-card{padding:17px 14px}.era-card:before{left:-21px;top:22px}.era-label{font-size:10px}.era-card h3{font-size:17px}.era-card>p:not(.source){font-size:12px}.era-tip{font-size:11px}.old-map-layout{grid-template-columns:1fr;gap:20px}.old-map-layout .reference-map{max-width:265px;margin:0 auto}.old-map-layout h3{font-size:19px}.history-details{padding:13px 10px;font-size:11px}.history-details table{font-size:9px}.history-details th,.history-details td{padding:7px 4px}.history-gloss{gap:17px}.region-guide .place-head>div{min-width:150px}.region-guide .place-head h2{font-size:21px}}
+/* Mobile reading: generous type, fewer nested gutters, and one reading column. */
+@media screen and (max-width:760px){
+  body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .top{padding:0 16px;gap:12px}
+  .top-link{font-size:13px;min-height:44px;display:flex;align-items:center}
+  .hero-wrap{padding:30px 18px 25px}
+  .hero h1{font-size:clamp(32px,8.8vw,43px);letter-spacing:-1.5px}
+  .hero-copy>p{font-size:16px;line-height:1.85}
+  .enter{font-size:16px;min-height:48px}
+  .hero-chips span{font-size:12px}
+  .speech{left:auto;right:12px;font-size:13px;max-width:calc(100% - 24px)}
+  .window-footer{font-size:11px;gap:10px;flex-wrap:wrap}
+  .trip-strip{font-size:14px;padding:14px}
+  .trip-strip a{padding:6px 0}
+  .layout{padding:0 12px}
+  .content,.place-inner,.place-head>div{min-width:0}
+  .place-inner{padding:24px 16px}
+  .place{margin-bottom:32px;box-shadow:3px 3px 0 var(--ink)}
+  .window-bar{height:auto;min-height:36px;font-size:11px;line-height:1.6;padding:7px 10px;letter-spacing:0}
+  .window-bar>span:first-child{min-width:0}
+  .window-bar i{flex-shrink:0}
+  .window-bar>span:last-child{flex-shrink:0}
+  .place-head{gap:12px;align-items:flex-start}
+  .place-head>div,.region-guide .place-head>div{min-width:0;flex:1}
+  .place-head h2,.region-guide .place-head h2{font-size:23px;letter-spacing:-.6px}
+  .place-head .eyebrow{font-size:11px;line-height:1.7;letter-spacing:.5px}
+  .place-head .eyebrow span{display:block}
+  .map-link{font-size:13px;min-height:44px;display:flex;align-items:center;padding:6px 10px;margin-top:10px}
+  .place-summary{padding-left:12px;margin:24px 0}
+  .place-summary h3{font-size:21px;line-height:1.55}
+  .place-summary p,.info-panel li,.history-card p,.field-card p,
+  .county-geography p,.era-card>p:not(.source),.old-map-layout>div>p,
+  .connection p,.glossary dl{font-size:16px;line-height:1.85}
+  .place-summary p,.history-card p,.field-card p,.county-geography p,
+  .era-card>p:not(.source),.old-map-layout>div>p{color:#3f5c51}
+  .info-panel,.history-card,.field-card,.connection{padding:18px 14px}
+  .info-panel h3,.county-geography h3,.era-card h3{font-size:19px;line-height:1.6}
+  .info-panel li{padding-left:28px;padding-bottom:18px}
+  .info-panel li:before{font-size:12px;top:7px}
+  .tag,.eyebrow,.era-label{font-size:12px;line-height:1.7}
+  .story-grid h3{font-size:21px;margin-bottom:18px}
+  .history-card h4,.field-card b{font-size:17px;line-height:1.65}
+  .history-card h4{margin-top:24px}
+  .history-card p+p{margin-top:14px}
+  .field-card li{padding-left:30px;padding-bottom:22px}
+  .field-card li:before{top:4px}
+  .source,.history-card .source,.era-card .source,.place-sources,
+  .gallery figcaption,.reference-map figcaption{font-size:12px;line-height:1.8}
+  .photo-open span{font-size:12px;padding:5px 10px}
+  .double{grid-template-columns:1fr;gap:18px}
+  .double img{height:auto;max-height:380px}
+  .flow{grid-template-columns:1fr;padding:18px 14px;gap:32px}
+  .flow b{font-size:17px}
+  .flow span{font-size:14px;line-height:1.7}
+  .flow>div:not(:last-child):after{content:'↓';top:auto;bottom:-29px;right:50%;transform:translateX(50%);font-size:18px}
+  .glossary h3{font-size:17px}
+  .county-stats small{font-size:12px}
+  .county-stats b span{font-size:14px}
+  .history-timeline{padding-left:12px}
+  .era-card{padding:18px 14px}
+  .era-card:before{left:-18px}
+  .era-tip{font-size:14px;line-height:1.85}
+  .history-details{padding:16px 12px;font-size:15px;overflow-x:auto}
+  .history-details table{font-size:14px;min-width:440px}
+  .history-details caption{font-size:12px}
+  .history-details th,.history-details td{padding:10px 8px}
+  .destination{min-height:160px;padding:14px 12px}
+  .destination b{font-size:16px;line-height:1.55}
+  .destination small{font-size:13px;line-height:1.7}
+  .dest-number,.route-note,.section-title>span{font-size:12px;line-height:1.8}
+  .next-link{font-size:15px;padding:10px 0;line-height:1.7}
+  footer{padding-right:8px;padding-left:8px}
+  footer>p:not(.eyebrow){font-size:15px}
+  footer>p br{display:none}
+  footer details{font-size:14px;line-height:1.85}
+  footer .footer-note{font-size:12px!important}
+  .back-top{width:44px;height:44px;right:12px;bottom:14px}
+  .dialog-bar{font-size:13px;align-items:flex-start}
+  .dialog-bar button{min-height:44px}
+}
+.mobile-pager{display:none}
+.page-announcement{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media screen and (max-width:760px){
+  body.mobile-reading{height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+  .mobile-reading .top{flex-shrink:0;position:relative}
+  .mobile-reading main{flex:1;min-height:0;overflow:hidden}
+  .mobile-reading .layout{height:100%;margin:0;padding:0 12px}
+  .mobile-reading main:has(>.hero-wrap.current-page)>.layout{display:none}
+  .mobile-reading .content{height:100%}
+  .mobile-reading .reading-page{display:none}
+  .mobile-reading .reading-page.current-page{display:block;height:100%;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;scroll-behavior:auto;padding-bottom:32px}
+  .mobile-reading .place.current-page{margin:0;box-shadow:none;border-top:0;border-bottom:0}
+  .mobile-reading .directory.current-page,.mobile-reading footer.current-page{padding-top:24px}
+  .mobile-reading .hero-wrap.current-page{padding-bottom:32px}
+  .mobile-reading .back-top{display:none}
+  .mobile-reading .mobile-pager{display:flex;align-items:center;gap:8px;flex-shrink:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));border-top:var(--border);background:#fffef5}
+  .mobile-pager button{min-height:44px;padding:6px 10px;flex-shrink:0;border:1px solid var(--ink);background:var(--mint);font-size:14px;font-weight:700}
+  .mobile-pager button:disabled{opacity:.4}
+  .mobile-pager select{min-width:0;flex:1;min-height:44px;padding:8px 4px;color:var(--ink);background:var(--paper);border:1px solid #afc1b4;border-radius:0;font:inherit;font-size:14px}
+  .mobile-pager select:focus-visible{outline:3px solid #a44773;outline-offset:2px}
+  .mobile-reading .history-details{touch-action:pan-x pan-y}
+}
 @media print{.history-timeline{display:block}.era-card{margin-bottom:12px;break-inside:avoid}.county-overview,.old-map-layout{grid-template-columns:1fr 1.4fr}.history-details{display:block}.county-stats b{font-size:18px}}
