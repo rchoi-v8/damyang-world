@@ -155,6 +155,33 @@
   .mobile-pager select:focus-visible{outline:3px solid #a44773;outline-offset:2px}
   .mobile-reading .history-details{touch-action:pan-x pan-y}
 }
+/* Fit all eight destination buttons into the mobile directory page. */
+@media screen and (max-width:760px){
+  .mobile-reading .directory.current-page{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:12px;padding:16px 4px;overflow:hidden}
+  .mobile-reading .directory .section-title{margin:0}
+  .mobile-reading .directory .section-title h2{font-size:23px;margin-top:4px;line-height:1.4}
+  .mobile-reading .directory .section-title>span{margin-top:4px;line-height:1.5}
+  .mobile-reading .directory-grid{min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(44px,1fr));gap:8px}
+  .mobile-reading .destination{min-height:44px;min-width:0;padding:12px 8px 10px 34px;justify-content:center;box-shadow:2px 2px 0 #9eb3a6}
+  .mobile-reading .dest-number{position:absolute;left:7px;top:4px;font-size:10px;line-height:1.3}
+  .mobile-reading .dest-icon{position:absolute;left:8px;top:55%;transform:translateY(-50%);font-size:20px;line-height:1;margin:0}
+  .mobile-reading .destination b{font-size:14px;line-height:1.45}
+  .mobile-reading .destination small{font-size:12px;line-height:1.5;margin-top:3px}
+  .mobile-reading .dest-arrow{right:6px;top:3px;font-size:12px}
+  .mobile-reading .directory .route-note{font-size:12px;line-height:1.65;padding:0;margin:0}
+}
+@container mobile-main (max-height:500px){
+  .mobile-reading .directory.current-page{padding:10px 4px;gap:8px}
+  .mobile-reading .directory .section-title .eyebrow{display:none}
+  .mobile-reading .directory .section-title h2{font-size:21px;margin:0}
+  .mobile-reading .directory-grid{gap:6px}
+  .mobile-reading .destination{padding-top:8px;padding-bottom:8px}
+  .mobile-reading .destination small{display:none}
+}
+@container mobile-main (max-height:340px) and (min-width:540px){
+  .mobile-reading .directory-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(44px,1fr))}
+  .mobile-reading .directory .section-title>span{display:none}
+}
 /* The closing page stays in the viewport; only the shared comment feed scrolls. */
 @media screen and (max-width:760px){
   .mobile-reading footer.current-page{position:relative;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding:12px 4px;overflow:hidden;text-align:left}
